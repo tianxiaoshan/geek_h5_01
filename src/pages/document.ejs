@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>geek</title>
+  <link rel="icon" href="<%= context.config.publicPath +'favicon.ico'%>" type="image/x-icon" />
+  <script src="//at.alicdn.com/t/font_2503709_f4q9dl3hktl.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background: #fff !important;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .showbox {
+      font-size: 24px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      margin-top: -78px;
+      text-align: center;
+    }
+
+    .loaderwrap {
+      position: relative;
+      height: 64px;
+      padding-top: 1px;
+    }
+
+    .loaderwrap:after {
+      content: '';
+      position: absolute;
+      width: 78px;
+      height: 14px;
+      border-radius: 100%;
+      left: 0;
+      right: 0;
+      top: 100%;
+      margin: -5px auto 0 auto;
+      background-color: rgba(0, 0, 0, 0.08);
+      z-index: -1;
+    }
+
+    .loaderbox {
+      position: relative;
+      width: 52px;
+      height: 64px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #ff5637;
+      border-radius: 6px;
+      -webkit-animation: jumping 1.2s linear infinite;
+      -moz-animation: jumping 1.2s linear infinite;
+      animation: jumping 1.2s linear infinite;
+    }
+
+    .loaderbox:before {
+      content: '';
+      position: absolute;
+      z-index: 4;
+      left: -10px;
+      top: -29px;
+      display: block;
+      width: 72px;
+      height: 50px;
+      border: 3px solid #fedc77;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    .loaderbox:after {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      top: 12px;
+      margin: 0 auto;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fedc77;
+    }
+
+    .loader-text {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    @keyframes jumping {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -12px;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-webkit-keyframes jumping {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -12px;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-moz-keyframes jumping {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -12px;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div class="showbox">
+      <div class="loaderwrap">
+        <div class="loaderbox">
+        </div>
+      </div>
+      <div class="loader-text">加载中...</div>
+    </div>
+  </div>
+
+  <script>
+    function getToken(token) {
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('_app_token_time', new Date().getTime());
+    }
+
+    function getUserInfo(data) {
+      window._userInfo = data
+    }
+
+  </script>
+
+</body>
+
+</html>

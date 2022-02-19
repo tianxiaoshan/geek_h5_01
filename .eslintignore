@@ -1,0 +1,10 @@
+/functions/mock/**
+/scripts
+/config
+/src/lib/
+/node_modules
+.eslintrc.js
+.prettierrc.js
+*.js.map
+/dist/
+/public

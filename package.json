@@ -1,0 +1,68 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "node ./scripts/dt.js && umi build",
+    "docker": "export CI=false && npm run build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "lint-staged:js": "eslint --ignore-path .gitignore --fix --cache --ext .js,.jsx,.ts,.tsx",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "src/**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "antd-mobile": "^5.0.0-rc.26",
+    "antd-mobile-icons": "^0.2.2",
+    "axios": "^0.24.0",
+    "classnames": "^2.3.1",
+    "dayjs": "^1.10.7",
+    "dva": "2.6.0-beta.21",
+    "formik": "^2.2.9",
+    "install": "^0.13.0",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "path-to-regexp": "^6.2.0",
+    "qs": "^6.10.2",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "react-responsive": "^9.0.0-beta.4",
+    "react-router-dom": "5.2.0",
+    "socket.io-client": "^4.4.1",
+    "swiper": "^7.4.1",
+    "umi": "3.5.17",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/fabric": "2.3.1",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.17",
+    "eslint": "^7.32.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.5",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^28.0.1",
+    "lint-staged": "^10.0.7",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.2.0",
+    "roadhog-api-doc": "^1.1.2",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}
